@@ -12,7 +12,7 @@
   <TemplateURL>https://github.com/jtraeholt/docker-templates/mysql.xml</TemplateURL>
   <Icon/>
   <ExtraParams/>
-  <DateInstalled>1473204905</DateInstalled>
+  <DateInstalled>1473205488</DateInstalled>
   <Description/>
   <Networking>
     <Mode>bridge</Mode>
@@ -24,7 +24,23 @@
       </Port>
     </Publish>
   </Networking>
-  <Data/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mysql/data/</HostDir>
+      <ContainerDir>/var/lib/mysql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mysql/logs/</HostDir>
+      <ContainerDir>/var/log/mysql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mysql/conf/</HostDir>
+      <ContainerDir>/etc/mysql/conf.d</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
   <Environment>
     <Variable>
       <Value></Value>
@@ -33,5 +49,8 @@
     </Variable>
   </Environment>
   <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="0" Mode="" Description="Container Variable: MYSQL_ROOT_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="PORT" Target="3306" Default="3306" Mode="tcp" Description="Container Port: 3306" Type="Port" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Host Port 1" Target="3306" Default="3306" Mode="tcp" Description="Container Port: 3306" Type="Port" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Data dir" Target="/var/lib/mysql" Default="/mnt/user/appdata/mysql/data/" Mode="rw" Description="Container Path: /var/lib/mysql" Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Logs dir" Target="/var/log/mysql" Default="/mnt/user/appdata/mysql/logs/" Mode="rw" Description="Container Path: /var/log/mysql" Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Config dir" Target="/etc/mysql/conf.d" Default="/mnt/user/appdata/mysql/conf/" Mode="rw" Description="Container Path: /etc/mysql/conf.d" Type="Path" Display="always" Required="false" Mask="false"></Config>
 </Container>
