@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>cavum</Name>
+  <Repository>jtraeholt/php-apache:latest</Repository>
+  <Registry>https://hub.docker.com/r/jtraeholt/php-apache/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Overview/>
+  <Category>Network:Web</Category>
+  <WebUI/>
+  <TemplateURL>https://github.com/jtraeholt/docker-templates/php-apache.xml</TemplateURL>
+  <Icon>http://php.net/images/logo.php</Icon>
+  <ExtraParams/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/var/www/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/var/www/html/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="http port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false" />
+  <Config Name="www-root" Target="/var/www/" Default="" Mode="rw" Description="Container Path: /var/www/" Type="Path" Display="always" Required="false" Mask="false" />
+  <Config Name="www-public" Target="/var/www/html/" Default="" Mode="ro" Description="Container Path: /var/www/html/" Type="Path" Display="always" Required="false" Mask="false" />
+</Container>

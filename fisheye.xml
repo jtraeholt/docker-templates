@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>fisheye</Name>
+  <Repository>mswinarski/atlassian-fisheye</Repository>
+  <Registry>https://hub.docker.com/r/mswinarski/atlassian-fisheye/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL>https://github.com/jtraeholt/docker-templates/fisheye.xml</TemplateURL>
+  <Icon>https://developer.atlassian.com/imgs/fisheye.png</Icon>
+  <ExtraParams/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/atlassian/data/fisheye</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="data dir" Target="/atlassian/data/fisheye" Default="/mnt/user/appdata/fisheye" Mode="rw" Description="Container Path: /atlassian/data/fisheye" Type="Path" Display="always" Required="false" Mask="false"/>
+</Container><?xml version="1.0"?>
+<Container version="2">
+  <Name>fisheye</Name>
+  <Repository>mswinarski/atlassian-fisheye</Repository>
+  <Registry>https://hub.docker.com/r/mswinarski/atlassian-fisheye/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL>https://github.com/jtraeholt/docker-templates/fisheye.xml</TemplateURL>
+  <Icon>https://developer.atlassian.com/imgs/fisheye.png</Icon>
+  <ExtraParams/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort />
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir />
+      <ContainerDir>/atlassian/data/fisheye</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="Data Dir" Target="/atlassian/data/fisheye" Default="/mnt/user/appdata/fisheye" Mode="rw" Description="Container Path: /atlassian/data/fisheye" Type="Path" Display="always" Required="false" Mask="false" />
+  <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false" />
+</Container>

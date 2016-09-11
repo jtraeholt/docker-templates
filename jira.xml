@@ -9,10 +9,9 @@
   <Overview/>
   <Category/>
   <WebUI/>
-  <TemplateURL/>
-  <Icon/>
+  <TemplateURL>https://github.com/jtraeholt/docker-templates/jira.xml</TemplateURL>
+  <Icon>https://developer.atlassian.com/imgs/jira.png</Icon>
   <ExtraParams/>
-  <DateInstalled>1473280852</DateInstalled>
   <Description/>
   <Networking>
     <Mode>bridge</Mode>
